@@ -1,0 +1,19 @@
+{
+  "artifact": "timing-data.json",
+  "sha256": "5d611056e915522a3955cdae59f0cde619c115d1c39a0cc98e568b236a59dabf",
+  "source_script": "scripts/extras.py",
+  "source_script_sha256": "20e912f2467efdc622a524bc1c2cc70b77fcad8e5a0996a284afcabf26a023ae",
+  "hardware": "NVIDIA DGX Spark GB10",
+  "model": "Qwen/Qwen3-8B",
+  "precision": "BF16",
+  "sample": "500 questions per benchmark, random.Random(0).sample",
+  "batch_token_budget": 16384,
+  "protocol": "pre-tokenized, one untimed pass and two interleaved timed passes, CUDA synchronized; median of two repetitions",
+  "head_weights": "initialized modules of trained architecture; CLM uses released checkpoint",
+  "memory": "not measured by this original throughput run",
+  "cache_conditions": {
+    "clm_cached": "embedding/vector caches enabled, empty at start of each timed pass",
+    "clm_cached_warm_options": "option cache filled before timing, query cache cold"
+  },
+  "provenance": "Recovered original results/timing_cached.json from the development checkout on the personal DGX Spark; identical copy in remote FunDM checkout. Source script hash matches this repository."
+}

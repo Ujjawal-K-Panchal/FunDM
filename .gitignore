@@ -1,0 +1,21 @@
+# environments and caches (the caches are published separately)
+# no trailing slash: these may be symlinks
+.venv
+.venv-clm
+feats*
+data
+heads
+logs
+__pycache__/
+.cache/huggingface/
+# outputs; the CoderForge run list and splits are inputs
+results/*
+!results/README.md
+!results/coderforge/
+results/coderforge/*
+!results/coderforge/README.md
+!results/coderforge/runs.tsv
+!results/coderforge/data_sha256.txt
+!results/coderforge/tasks.json
+!results/coderforge/split_s*.json
+outdated

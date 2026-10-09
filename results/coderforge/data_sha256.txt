@@ -1,0 +1,7 @@
+# SHA-256 of the CoderForge run files in ~/data/coderforge on the DGX Spark (written 2026-09-26),
+# the inputs to scripts/coderforge_*.py, kd_cf_extract.py and the judge. val.jsonl holds the 799 test runs.
+# Source: togethercomputer/CoderForge-Preview, trajectories/SWE_Rebench; rebuild with scripts/coderforge_fetch.py.
+# task_prompts.jsonl is not read by any script in this repo.
+906da9dd7440b453e2e487d15c0cab5eadbea73389a4008304bd556fe6614fe5  7985 lines  2161446658 bytes  train.jsonl
+c8d306a40e92c534654a071a5ea7fe2dd3ab53c503dcd36e8f9c7b38c74e62ac  799 lines  214695483 bytes  val.jsonl
+1460fc3227baecb13bd1cddf8c7c316a4770755f3e1c7b123ef16d014bad3ef8  1100 lines  12453506 bytes  task_prompts.jsonl

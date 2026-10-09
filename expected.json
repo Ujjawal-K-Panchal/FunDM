@@ -1,0 +1,1157 @@
+{
+ "source": "reference cells for 12 paper tables and Figures 3\u20134; archived PyTorch timing and native vLLM workload measurements, 2026-10-07",
+ "tables": {
+  "1": {
+   "label": "tab:sets",
+   "rows": [
+    [
+     "MMLU-Pro",
+     "0.180",
+     "0.182",
+     "0.157",
+     "0.426",
+     "0.443",
+     "0.451"
+    ],
+    [
+     "MMLU",
+     "0.358",
+     "0.368",
+     "0.299",
+     "0.684",
+     "0.685",
+     "0.706"
+    ],
+    [
+     "OpenBookQA",
+     "0.338",
+     "0.386",
+     "0.288",
+     "0.834",
+     "0.834",
+     "0.856"
+    ],
+    [
+     "CommonsenseQA",
+     "0.389",
+     "0.426",
+     "0.237",
+     "0.799",
+     "0.796",
+     "0.792"
+    ],
+    [
+     "PIQA",
+     "0.609",
+     "0.610",
+     "0.595",
+     "0.849",
+     "0.856",
+     "0.854"
+    ],
+    [
+     "HellaSwag",
+     "0.423",
+     "0.423",
+     "0.399",
+     "0.833",
+     "0.840",
+     "0.827"
+    ],
+    [
+     "WinoGrande",
+     "0.482",
+     "0.499",
+     "0.505",
+     "0.682",
+     "0.680",
+     "0.696"
+    ],
+    [
+     "BoolQ",
+     "0.764",
+     "0.819",
+     "0.378",
+     "0.865",
+     "0.869",
+     "0.870"
+    ],
+    [
+     "Mean",
+     "0.443",
+     "0.464",
+     "0.357",
+     "0.747",
+     "0.750",
+     "0.757"
+    ],
+    [
+     "Total parameters",
+     "7.59B",
+     "7.59B",
+     "7.59B",
+     "5.25B",
+     "5.26B",
+     "8.19B"
+    ],
+    [
+     "Trainable parameters",
+     "18.9M",
+     "18.9M",
+     "18.9M",
+     "1.05M",
+     "5.38M",
+     "0"
+    ],
+    [
+     "Layers run (of 36)",
+     "36",
+     "36",
+     "36",
+     "24",
+     "24",
+     "36 + LM head"
+    ]
+   ]
+  },
+  "2": {
+   "label": "tab:efficiency",
+   "rows": [
+    [
+     "CLM (released)",
+     "36",
+     "7.59B",
+     "19.3",
+     "16.8",
+     "216.7",
+     "0.69x"
+    ],
+    [
+     "Full model + LM head",
+     "36",
+     "8.19B",
+     "20.5",
+     "24.5",
+     "93.7",
+     "1.00x"
+    ],
+    [
+     "foh",
+     "24",
+     "5.25B",
+     "13.8",
+     "38.4",
+     "57.6",
+     "1.57x"
+    ],
+    [
+     "fohc",
+     "24",
+     "5.26B",
+     "13.8",
+     "38.2",
+     "58.3",
+     "1.56x"
+    ],
+    [
+     "fohce (ablation)",
+     "36",
+     "7.57B",
+     "19.8",
+     "29.5",
+     "84.5",
+     "1.20x"
+    ],
+    [
+     "fohcce (ablation)",
+     "36",
+     "7.57B",
+     "19.6",
+     "29.5",
+     "86.9",
+     "1.20x"
+    ]
+   ]
+  },
+  "3": {
+   "label": "tab:agent",
+   "rows": [
+    [
+     "Released CLM, no training\u2020",
+     "7.59B",
+     "18.9M",
+     "44.0",
+     "0.458"
+    ],
+    [
+     "Released CLM, fine-tuned\u2020",
+     "7.59B",
+     "18.9M",
+     "58.2\u00b13.4",
+     "0.581\u00b10.008"
+    ],
+    [
+     "CLM-shaped, action-trained",
+     "7.59B",
+     "18.9M",
+     "52.0\u00b14.2",
+     "0.551\u00b10.043"
+    ],
+    [
+     "fohkd, layer 24",
+     "5.25B",
+     "1.05M",
+     "74.6\u00b11.5",
+     "0.765\u00b10.025"
+    ],
+    [
+     "fohckd, layer 24",
+     "5.26B",
+     "5.38M",
+     "74.4\u00b12.2",
+     "0.748\u00b10.022"
+    ],
+    [
+     "Full-model judge (teacher)",
+     "8.19B",
+     "0",
+     "74",
+     "0.760"
+    ]
+   ]
+  },
+  "4": {
+   "label": "tab:target",
+   "rows": [
+    [
+     "Correct-option labels",
+     "0.713\u00b10.016",
+     "0.734\u00b10.001"
+    ],
+    [
+     "Teacher's top choice",
+     "0.735\u00b10.006",
+     "0.740\u00b10.003"
+    ],
+    [
+     "Teacher probabilities (FunDM)",
+     "0.747\u00b10.001",
+     "0.751\u00b10.002"
+    ],
+    [
+     "Full model (teacher), 36 layers",
+     "0.757"
+    ]
+   ]
+  },
+  "5": {
+   "label": "tab:ce-sets",
+   "rows": [
+    [
+     "MMLU-Pro",
+     "0.304",
+     "0.451"
+    ],
+    [
+     "MMLU",
+     "0.543",
+     "0.706"
+    ],
+    [
+     "OpenBookQA",
+     "0.580",
+     "0.856"
+    ],
+    [
+     "CommonsenseQA",
+     "0.616",
+     "0.792"
+    ],
+    [
+     "PIQA",
+     "0.643",
+     "0.854"
+    ],
+    [
+     "HellaSwag",
+     "0.490",
+     "0.827"
+    ],
+    [
+     "WinoGrande",
+     "0.506",
+     "0.696"
+    ],
+    [
+     "BoolQ",
+     "0.685",
+     "0.870"
+    ],
+    [
+     "Mean",
+     "0.546",
+     "0.757"
+    ]
+   ]
+  },
+  "6": {
+   "label": "tab:grid",
+   "rows": [
+    [
+     "fohce",
+     "1.05M",
+     "0.160\u00b10.000",
+     "0.342\u00b10.016",
+     "0.317\u00b10.015"
+    ],
+    [
+     "fohcce",
+     "5.38M",
+     "0.159\u00b10.003",
+     "0.366\u00b10.004",
+     "0.332\u00b10.001"
+    ],
+    [
+     "CLM-shaped MLPs",
+     "18.9M",
+     "0.163\u00b10.005",
+     "0.369\u00b10.001",
+     "0.327\u00b10.002"
+    ],
+    [
+     "Released CLM (pretrained)",
+     "18.9M",
+     "0.180",
+     "--",
+     "--"
+    ]
+   ]
+  },
+  "7": {
+   "label": "tab:gold-heads",
+   "rows": [
+    [
+     "fohce (seed 0)",
+     "1.05M",
+     "0.304",
+     "2.19",
+     "0.194"
+    ],
+    [
+     "fohce (seeds 0, 1, 2)",
+     "1.05M",
+     "0.317\u00b10.015",
+     "--",
+     "--"
+    ],
+    [
+     "fohcce",
+     "5.38M",
+     "0.331",
+     "2.08",
+     "0.118"
+    ],
+    [
+     "CLM-shaped MLPs",
+     "18.9M",
+     "0.327",
+     "1.98",
+     "0.067"
+    ]
+   ]
+  },
+  "8": {
+   "label": "tab:depth",
+   "rows": [
+    [
+     "16",
+     "3.71B (45%)",
+     "44%",
+     "0.579",
+     "0.569"
+    ],
+    [
+     "20",
+     "4.48B (55%)",
+     "56%",
+     "0.708",
+     "0.716"
+    ],
+    [
+     "24 (two-thirds)",
+     "5.25B (64%)",
+     "67%",
+     "0.747",
+     "0.750"
+    ],
+    [
+     "28",
+     "6.02B (74%)",
+     "78%",
+     "0.756",
+     "0.757"
+    ],
+    [
+     "32",
+     "6.80B (83%)",
+     "89%",
+     "0.753",
+     "0.755"
+    ],
+    [
+     "36 + LM head (teacher)",
+     "8.19B (100%)",
+     "100%",
+     "0.757"
+    ]
+   ]
+  },
+  "9": {
+   "label": "tab:head-kl",
+   "rows": [
+    [
+     "fohkd",
+     "0.551",
+     "0.190",
+     "0.091",
+     "0.061",
+     "0.060"
+    ],
+    [
+     "fohckd",
+     "0.474",
+     "0.176",
+     "0.103",
+     "0.039",
+     "0.034"
+    ]
+   ]
+  },
+  "10": {
+   "label": "tab:data",
+   "rows": [
+    [
+     "16",
+     "0.579",
+     "0.564",
+     "0.569",
+     "0.605"
+    ],
+    [
+     "20",
+     "0.708",
+     "0.719",
+     "0.716",
+     "0.726"
+    ],
+    [
+     "24",
+     "0.747",
+     "0.749",
+     "0.750",
+     "0.751"
+    ],
+    [
+     "28",
+     "0.756",
+     "0.759",
+     "0.757",
+     "0.756"
+    ],
+    [
+     "32",
+     "0.753",
+     "0.756",
+     "0.755",
+     "0.756"
+    ],
+    [
+     "36 + LM head (teacher)",
+     "0.757"
+    ]
+   ]
+  },
+  "11": {
+   "label": "tab:deepswe",
+   "rows": [
+    [
+     "Random",
+     "28.0",
+     "73.7%"
+    ],
+    [
+     "CLM-shaped, from scratch",
+     "29.6\u00b11.3",
+     "77.9%"
+    ],
+    [
+     "fohce (read separately)",
+     "30.2\u00b10.4",
+     "79.5%"
+    ],
+    [
+     "fohcce (read separately)",
+     "29.4\u00b10.9",
+     "77.4%"
+    ],
+    [
+     "CLM, released DeepSWE head",
+     "31",
+     "81.6%"
+    ],
+    [
+     "Oracle",
+     "34",
+     "89.5%"
+    ]
+   ]
+  },
+  "12": {
+   "label": "tab:throughput",
+   "rows": [
+    [
+     "CLM, all texts batched",
+     "36",
+     "15.2",
+     "22.4",
+     "54.3",
+     "55.3",
+     "37.1",
+     "18.3",
+     "55.0",
+     "15.5"
+    ],
+    [
+     "CLM",
+     "36",
+     "14.1",
+     "20.5",
+     "51.3",
+     "56.5",
+     "31.0",
+     "17.0",
+     "94.1",
+     "15.8"
+    ],
+    [
+     "CLM, options prepared",
+     "36",
+     "31.7",
+     "35.1",
+     "103.9",
+     "107.6",
+     "140.3",
+     "53.7",
+     "107.3",
+     "19.6"
+    ],
+    [
+     "fohce",
+     "36",
+     "16.2",
+     "25.7",
+     "66.2",
+     "84.6",
+     "37.3",
+     "18.5",
+     "93.9",
+     "19.5"
+    ],
+    [
+     "Full model (teacher)",
+     "36 + LM head",
+     "14.0",
+     "22.1",
+     "49.8",
+     "53.1",
+     "32.2",
+     "16.6",
+     "62.4",
+     "17.2"
+    ],
+    [
+     "fohkd",
+     "32",
+     "15.8",
+     "25.0",
+     "56.1",
+     "59.9",
+     "36.4",
+     "18.7",
+     "70.5",
+     "19.4"
+    ],
+    [
+     "fohkd",
+     "28",
+     "18.0",
+     "28.5",
+     "64.1",
+     "68.4",
+     "41.5",
+     "21.3",
+     "80.5",
+     "22.2"
+    ],
+    [
+     "fohkd",
+     "24",
+     "21.0",
+     "33.2",
+     "74.9",
+     "79.8",
+     "48.3",
+     "24.9",
+     "93.9",
+     "25.9"
+    ],
+    [
+     "fohkd",
+     "20",
+     "25.2",
+     "39.8",
+     "89.6",
+     "95.6",
+     "58.0",
+     "29.8",
+     "112.4",
+     "31.0"
+    ],
+    [
+     "fohkd",
+     "16",
+     "31.5",
+     "49.8",
+     "112.1",
+     "119.5",
+     "72.4",
+     "37.3",
+     "140.9",
+     "38.7"
+    ]
+   ]
+  }
+ },
+ "text": [
+  [
+   "retention at 24 layers, Linear",
+   "98.7%"
+  ],
+  [
+   "retention at 24 layers, +1T",
+   "99.2%"
+  ],
+  [
+   "retention at 20 layers",
+   "94--95%"
+  ],
+  [
+   "retention at 16 layers",
+   "75--76%"
+  ],
+  [
+   "28-layer means",
+   "0.756 and 0.757"
+  ],
+  [
+   "parameter saving at 24 layers",
+   "36%"
+  ],
+  [
+   "layer saving at 24 layers",
+   "33%"
+  ],
+  [
+   "margin over CLM ft., smallest",
+   "4.6"
+  ],
+  [
+   "margin over CLM ft., largest",
+   "44.8"
+  ],
+  [
+   "CLM ft. mean",
+   "0.464"
+  ],
+  [
+   "CE mean",
+   "0.546"
+  ],
+  [
+   "+1T MMLU-Pro NLL vs teacher",
+   "1.98 versus 2.22"
+  ],
+  [
+   "sets where +1T NLL < teacher",
+   "six of eight"
+  ],
+  [
+   "mean agreement",
+   "88%"
+  ],
+  [
+   "MMLU-Pro agreement",
+   "74--75%"
+  ],
+  [
+   "judge tasks",
+   "solves 74 tasks"
+  ],
+  [
+   "random choice",
+   "54.9"
+  ],
+  [
+   "Linear vs +1T AUC at 24 layers",
+   "0.765 and 0.748"
+  ],
+  [
+   "+1T task interval",
+   "-8.0 to +8.8"
+  ],
+  [
+   "+1T AUC interval",
+   "-0.059 to +0.033"
+  ],
+  [
+   "Linear task interval",
+   "-7.4 to +8.4"
+  ],
+  [
+   "different picks",
+   "60--69"
+  ],
+  [
+   "head right, judge wrong",
+   "9--12"
+  ],
+  [
+   "judge right, head wrong",
+   "7--12"
+  ],
+  [
+   "near-tie tasks",
+   "48 tasks"
+  ],
+  [
+   "judge says yes",
+   "94%"
+  ],
+  [
+   "options-prompt AUC",
+   "0.769"
+  ],
+  [
+   "letter mass, agents",
+   "99.9%"
+  ],
+  [
+   "yes/no mass",
+   "99.1%"
+  ],
+  [
+   "joint-encoding gain",
+   "16--17"
+  ],
+  [
+   "question gain",
+   "18--21 points over option only"
+  ],
+  [
+   "question + option accuracy",
+   "0.342--0.369"
+  ],
+  [
+   "other options cost",
+   "2.6--4.2 points lower"
+  ],
+  [
+   "pass cost",
+   "one pass of 180 tokens per question, against 10.5 passes and 842 tokens"
+  ],
+  [
+   "labels on KD states",
+   "0.713 for foh and 0.734 for fohc"
+  ],
+  [
+   "soft over hard targets",
+   "1.1--1.2 points above the"
+  ],
+  [
+   "soft over label targets",
+   "1.6--3.4 points above correct labels"
+  ],
+  [
+   "KL at 24 layers",
+   "0.103 versus 0.091"
+  ],
+  [
+   "KL at 32 layers",
+   "0.034 versus 0.060"
+  ],
+  [
+   "MMLU-Pro retention at 20 layers",
+   "86--88%"
+  ],
+  [
+   "data, 24 layers",
+   "0.2 points for fohkd and 0.1 for fohckd"
+  ],
+  [
+   "data, 20 layers",
+   "1.1 and 1.0"
+  ],
+  [
+   "data, 16 layers Linear",
+   "loses about 1.4"
+  ],
+  [
+   "data, 16 layers +1T",
+   "gains about 3.6"
+  ],
+  [
+   "prompt validation rows",
+   "1903 held-out validation rows"
+  ],
+  [
+   "prompt validation chance",
+   "chance 0.194"
+  ],
+  [
+   "teacher validation accuracy",
+   "0.744 with the multi-line prompt and 0.570 with a single-line prompt"
+  ],
+  [
+   "prompt validation gap",
+   "17.4-point difference (95% bootstrap interval 15.4 to 19.5)"
+  ],
+  [
+   "original option order",
+   "45.2%"
+  ],
+  [
+   "shuffled order",
+   "45.1%"
+  ],
+  [
+   "letter mass, MMLU-Pro",
+   "51%"
+  ],
+  [
+   "letter mass, other sets",
+   "77--96%"
+  ],
+  [
+   "repeated questions",
+   "925 repeated"
+  ],
+  [
+   "CLM fitting rows",
+   "34260 fitting rows"
+  ],
+  [
+   "CE epoch, Linear",
+   "epoch 2"
+  ],
+  [
+   "CE epoch, +1T",
+   "epoch 3"
+  ],
+  [
+   "CE NLL rise, Linear",
+   "0.997 to 1.16"
+  ],
+  [
+   "CE NLL rise, +1T",
+   "0.887 to 1.306"
+  ],
+  [
+   "BoolQ before CLM fine-tuning",
+   "84.4%"
+  ],
+  [
+   "BoolQ after CLM fine-tuning",
+   "81.9%"
+  ],
+  [
+   "BoolQ released Engine",
+   "76.4%"
+  ],
+  [
+   "BoolQ always yes",
+   "62.2%"
+  ],
+  [
+   "DeepSWE fitting steps",
+   "20117"
+  ],
+  [
+   "DeepSWE validation steps",
+   "2459"
+  ],
+  [
+   "DeepSWE mixed tasks",
+   "Only 13 tasks can"
+  ],
+  [
+   "DeepSWE CLM lead",
+   "0.8--1.6 tasks"
+  ],
+  [
+   "DeepSWE seed spread",
+   "variation reaches 1.3 tasks"
+  ],
+  [
+   "CE over CLM",
+   "1.00--1.50"
+  ],
+  [
+   "KD 24 over teacher",
+   "1.50"
+  ],
+  [
+   "KD 20 over teacher",
+   "1.80"
+  ],
+  [
+   "KD 24 over CLM",
+   "1.00--1.63"
+  ],
+  [
+   "+1T versus linear",
+   "within 0.4%"
+  ],
+  [
+   "KD prompt tokens",
+   "216 versus 182 tokens"
+  ],
+  [
+   "released CLM on CoderForge",
+   "solves 44.0 tasks with AUC 0.436"
+  ],
+  [
+   "released CLM, own cosine",
+   "gives 44.0 tasks and AUC 0.458"
+  ],
+  [
+   "released CLM fine-tuned, own cosine",
+   "gives 58.2\u00b13.4 tasks and AUC 0.581\u00b10.008"
+  ],
+  [
+   "ADP passing test runs",
+   "405 of the 439 passing runs"
+  ],
+  [
+   "ADP test tasks",
+   "covering 97 of the 100 tasks"
+  ],
+  [
+   "ADP failing test runs",
+   "none of the 360 failing runs"
+  ],
+  [
+   "CE action-trained, base",
+   "solves 61.0\u00b11.6 tasks with AUC 0.554\u00b10.009"
+  ],
+  [
+   "CE action-trained, +1T",
+   "solves 57.8\u00b13.6 tasks with AUC 0.525\u00b10.005"
+  ]
+ ],
+ "figures": {
+  "3": {
+   "label": "fig:benchmark-depth",
+   "rows": [
+    [
+     "fohkd: MMLU-Pro",
+     "0.263 (58.3%)",
+     "0.386 (85.6%)",
+     "0.426 (94.5%)",
+     "0.438 (97.1%)",
+     "0.444 (98.4%)",
+     "0.451"
+    ],
+    [
+     "fohkd: MMLU",
+     "0.507 (71.8%)",
+     "0.643 (91.1%)",
+     "0.684 (96.9%)",
+     "0.701 (99.3%)",
+     "0.697 (98.7%)",
+     "0.706"
+    ],
+    [
+     "fohkd: OpenBookQA",
+     "0.616 (72.0%)",
+     "0.814 (95.1%)",
+     "0.834 (97.4%)",
+     "0.850 (99.3%)",
+     "0.844 (98.6%)",
+     "0.856"
+    ],
+    [
+     "fohkd: CommonsenseQA",
+     "0.701 (88.5%)",
+     "0.746 (94.2%)",
+     "0.799 (100.9%)",
+     "0.806 (101.8%)",
+     "0.796 (100.5%)",
+     "0.792"
+    ],
+    [
+     "fohkd: PIQA",
+     "0.715 (83.7%)",
+     "0.828 (97.0%)",
+     "0.849 (99.4%)",
+     "0.860 (100.7%)",
+     "0.848 (99.3%)",
+     "0.854"
+    ],
+    [
+     "fohkd: HellaSwag",
+     "0.614 (74.2%)",
+     "0.773 (93.5%)",
+     "0.833 (100.7%)",
+     "0.834 (100.8%)",
+     "0.835 (101.0%)",
+     "0.827"
+    ],
+    [
+     "fohkd: WinoGrande",
+     "0.526 (75.6%)",
+     "0.635 (91.2%)",
+     "0.682 (98.0%)",
+     "0.688 (98.9%)",
+     "0.691 (99.3%)",
+     "0.696"
+    ],
+    [
+     "fohkd: BoolQ",
+     "0.687 (79.0%)",
+     "0.842 (96.8%)",
+     "0.865 (99.4%)",
+     "0.873 (100.3%)",
+     "0.871 (100.1%)",
+     "0.870"
+    ],
+    [
+     "fohckd: MMLU-Pro",
+     "0.250 (55.4%)",
+     "0.398 (88.2%)",
+     "0.443 (98.2%)",
+     "0.441 (97.8%)",
+     "0.446 (98.9%)",
+     "0.451"
+    ],
+    [
+     "fohckd: MMLU",
+     "0.526 (74.5%)",
+     "0.658 (93.2%)",
+     "0.685 (97.0%)",
+     "0.705 (99.9%)",
+     "0.703 (99.6%)",
+     "0.706"
+    ],
+    [
+     "fohckd: OpenBookQA",
+     "0.636 (74.3%)",
+     "0.802 (93.7%)",
+     "0.834 (97.4%)",
+     "0.860 (100.5%)",
+     "0.854 (99.8%)",
+     "0.856"
+    ],
+    [
+     "fohckd: CommonsenseQA",
+     "0.702 (88.6%)",
+     "0.783 (98.9%)",
+     "0.796 (100.5%)",
+     "0.800 (101.0%)",
+     "0.794 (100.3%)",
+     "0.792"
+    ],
+    [
+     "fohckd: PIQA",
+     "0.715 (83.7%)",
+     "0.825 (96.6%)",
+     "0.856 (100.2%)",
+     "0.857 (100.4%)",
+     "0.856 (100.2%)",
+     "0.854"
+    ],
+    [
+     "fohckd: HellaSwag",
+     "0.621 (75.1%)",
+     "0.782 (94.6%)",
+     "0.840 (101.6%)",
+     "0.830 (100.4%)",
+     "0.832 (100.6%)",
+     "0.827"
+    ],
+    [
+     "fohckd: WinoGrande",
+     "0.525 (75.4%)",
+     "0.634 (91.1%)",
+     "0.680 (97.7%)",
+     "0.689 (99.0%)",
+     "0.687 (98.7%)",
+     "0.696"
+    ],
+    [
+     "fohckd: BoolQ",
+     "0.574 (66.0%)",
+     "0.849 (97.6%)",
+     "0.869 (99.9%)",
+     "0.872 (100.2%)",
+     "0.865 (99.4%)",
+     "0.870"
+    ]
+   ]
+  },
+  "4": {
+   "label": "fig:agent-depth",
+   "rows": [
+    [
+     "16",
+     "75.0\u00b12.3",
+     "74.4\u00b12.1",
+     "0.723\u00b10.023",
+     "0.727\u00b10.021"
+    ],
+    [
+     "20",
+     "74.8\u00b11.3",
+     "76.0\u00b12.2",
+     "0.781\u00b10.009",
+     "0.795\u00b10.011"
+    ],
+    [
+     "24",
+     "74.6\u00b11.5",
+     "74.4\u00b12.2",
+     "0.765\u00b10.025",
+     "0.748\u00b10.022"
+    ],
+    [
+     "28",
+     "74.4\u00b12.9",
+     "76.4\u00b11.7",
+     "0.746\u00b10.018",
+     "0.764\u00b10.031"
+    ],
+    [
+     "32",
+     "75.4\u00b13.3",
+     "76.4\u00b11.1",
+     "0.734\u00b10.021",
+     "0.753\u00b10.023"
+    ],
+    [
+     "Full-model judge (36 layers + lm_head)",
+     "74",
+     "0.760"
+    ]
+   ]
+  }
+ }
+}
